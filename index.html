@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuário</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Cadastro de Usuário</h1>
+    <p class="subtitulo">Informe seus dados. O endereço será buscado automaticamente pelo CEP.</p>
+
+    <form id="formCadastro">
+      <label for="nome">Nome completo</label>
+      <input id="nome" name="nome" type="text" autocomplete="name" required>
+
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+
+      <label for="cep">CEP</label>
+      <input id="cep" name="cep" type="text" inputmode="numeric" maxlength="9" placeholder="00000-000" autocomplete="postal-code" required>
+      <p id="mensagemCep" class="mensagem" role="status" aria-live="polite"></p>
+
+      <label for="logradouro">Rua / Logradouro</label>
+      <input id="logradouro" name="logradouro" type="text" autocomplete="address-line1" required>
+
+      <label for="numero">Número</label>
+      <input id="numero" name="numero" type="text" autocomplete="address-line2" required>
+
+      <label for="complemento">Complemento (opcional)</label>
+      <input id="complemento" name="complemento" type="text">
+
+      <label for="bairro">Bairro</label>
+      <input id="bairro" name="bairro" type="text" required>
+
+      <div class="duas-colunas">
+        <div>
+          <label for="cidade">Cidade</label>
+          <input id="cidade" name="cidade" type="text" autocomplete="address-level2" required>
+        </div>
+        <div>
+          <label for="uf">UF</label>
+          <input id="uf" name="uf" type="text" maxlength="2" autocomplete="address-level1" required>
+        </div>
+      </div>
+
+      <div class="acoes">
+        <button type="submit">Salvar cadastro</button>
+        <button type="button" id="limpar" class="secundario">Limpar dados</button>
+      </div>
+      <p id="mensagemForm" class="mensagem" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+</body>
+</html>
